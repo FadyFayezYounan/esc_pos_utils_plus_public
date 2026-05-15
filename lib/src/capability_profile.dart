@@ -11,7 +11,7 @@ class CodePage {
 }
 
 class CapabilityProfile {
-  CapabilityProfile._internal(this.name, this.codePages);
+  CapabilityProfile(this.name, this.codePages);
 
   /// [ensureProfileLoaded]
   /// this method will cache the profile json into data which will
@@ -57,8 +57,7 @@ class CapabilityProfile {
       list.add(CodePage(int.parse(k), v));
     });
 
-    // Call the private constructor
-    return CapabilityProfile._internal(name, list);
+    return CapabilityProfile(name, list);
   }
 
   String name;
